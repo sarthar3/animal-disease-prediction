@@ -69,8 +69,8 @@ export const getPossibleDiseases = (selectedSymptoms: string[]): Disease[] => {
   return diseases.filter((disease) =>
     selectedSymptoms.some((symptom) => disease.symptoms.includes(symptom))
   ).sort((a, b) => {
-    const aMatch = disease.symptoms.filter((s) => selectedSymptoms.includes(s)).length;
-    const bMatch = disease.symptoms.filter((s) => selectedSymptoms.includes(s)).length;
+    const aMatch = a.symptoms.filter((s) => selectedSymptoms.includes(s)).length;
+    const bMatch = b.symptoms.filter((s) => selectedSymptoms.includes(s)).length;
     return bMatch - aMatch;
   });
 };
